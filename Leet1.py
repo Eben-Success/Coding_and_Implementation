@@ -1,17 +1,21 @@
-def maxOperations(nums, k):
-    srt = sorted(nums)
+nums = ["3", "6", "7", "10"]
 
-    l = 0
-    r = len(srt) - 1
-    count = 0
+int_nums = [int(item) for item in nums]
+print(int_nums)
 
-    while l < r:
-        if srt[l] + srt[r] == k:
-            count += 1
-            l += 1
-            r -=1
-        elif srt[l] + srt[r] < k:
-            l += 1
-        elif srt[l] + srt[r] > k:
-            r -= 1
-    return count
+srt = sorted(int_nums, reverse=True)
+print(srt)
+
+
+def kthLargestNumber(nums, k):
+    int_nums = [int(item) for item in nums]
+
+    srt = sorted(int_nums, reverse=True)
+
+    return srt[k-1]
+
+
+nums = ["3", "6", "7", "10"]
+
+q = kthLargestNumber(nums, 4)
+print(q)
