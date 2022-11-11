@@ -1,7 +1,7 @@
 def fillPrefixSum(arr, n, prefixSum):
     prefixSum[0] = arr[0]
 
-    for i in range(1, n):
+    for i in range(n):
         prefixSum[i] = prefixSum[i - 1] + arr[i]
 
 
