@@ -1,21 +1,28 @@
-nums = ["3", "6", "7", "10"]
+import math
+def gradingStudent(grades):
 
-int_nums = [int(item) for item in nums]
-print(int_nums)
+    rounded = []
 
-srt = sorted(int_nums, reverse=True)
-print(srt)
+    for grade in grades:
+        floor_digit = math.floor(grade / 5)
+        next_mutliple = (5 * (1 + floor_digit))
 
+        difference = next_mutliple - grade
 
-def kthLargestNumber(nums, k):
-    int_nums = [int(item) for item in nums]
+        # if grade < 37:
+        #     rounded.append(grade)
 
-    srt = sorted(int_nums, reverse=True)
+        if difference < 3:
+            if grade < 37:
+                rounded.append(grade)
+            rounded.append(next_mutliple)
 
-    return srt[k-1]
+        if difference >= 3:
+            rounded.append(grade)
 
+    return rounded
 
-nums = ["3", "6", "7", "10"]
+grades = [2, 3, 56, 34, 78, 90]
 
-q = kthLargestNumber(nums, 4)
-print(q)
+data = gradingStudent(grades)
+print(data)
