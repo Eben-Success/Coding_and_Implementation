@@ -15,3 +15,7 @@
 Space Complexity: O(max)
 The larger the range of element, the larger the space complexity.
 Stablity: Yes
+
+### Application of Counting Sort
+* There are smaller integers with multiple counts.
+* Linear complexity is the need.
