@@ -1,3 +1,4 @@
+# Time complexity is O(n)
 def sliding_window(arr, k):
     # Sum up the first subarray and add it to the result
     curr_subarray = sum(arr[:k])
