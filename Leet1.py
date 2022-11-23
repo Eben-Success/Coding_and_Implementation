@@ -1,21 +1,19 @@
-nums = ["3", "6", "7", "10"]
+def findMedian(nums1, nums2):
+    nums1 = nums1 + nums2
 
-int_nums = [int(item) for item in nums]
-print(int_nums)
+    mid = len(nums1) / 2
 
-srt = sorted(int_nums, reverse=True)
-print(srt)
+    if len(nums1) % 2 == 0:
+        median = nums1[mid] + nums1[mid+1]
+        print(median)
 
-
-def kthLargestNumber(nums, k):
-    int_nums = [int(item) for item in nums]
-
-    srt = sorted(int_nums, reverse=True)
-
-    return srt[k-1]
+    else:
+        median = nums1[mid]
+        print(median)
 
 
-nums = ["3", "6", "7", "10"]
 
-q = kthLargestNumber(nums, 4)
-print(q)
+nums1 = [2,3,4,5]
+nums2 = [6,7]
+
+print(findMedian(nums1, nums2))
