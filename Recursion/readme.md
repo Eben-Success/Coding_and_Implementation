@@ -14,3 +14,6 @@ Recursion is a function that calls itself.
 * Can lead to out of memory error or stack overflow exceptions.
 * Can be unnecessarily complex if poorly constructed.
 
+## Divide & Conquer
+
+Divide and conquer algorithms are mostly recursive algorithms.
