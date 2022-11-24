@@ -1,22 +1,12 @@
-def SquareRoot(x):
-    start, end = 0, x
+def nextGreaterElement(nums1, nums2):
+    dic, stack = {}, []
     
-    while start + 1 < end:
-        mid = (start  + end ) // 2
+    for num in nums2[::-1]:
+        while stack and num > stack[-1]:
+            stack.pop()
+        if stack:
+            dic[num] = stack[-1]
+        stack.append(num)
+    return [dic.get(num, -1) for num in nums1]
         
-        if (mid * mid) == x:
-            return mid
         
-        elif (mid * mid ) < x:
-            start = mid
-        
-        else:
-            end = mid
-            
-    if (end * end) == x:
-        return end
-    
-    return start
-    
-    
-print(SquareRoot(81))

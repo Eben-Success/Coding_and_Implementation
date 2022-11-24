@@ -17,3 +17,6 @@ Recursion is a function that calls itself.
 ## Divide & Conquer
 
 Divide and conquer algorithms are mostly recursive algorithms.
+
+![](2022-11-24-06-25-44.png)
+
