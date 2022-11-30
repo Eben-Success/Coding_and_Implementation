@@ -1,12 +1,16 @@
-def nextGreaterElement(nums1, nums2):
-    dic, stack = {}, []
-    
-    for num in nums2[::-1]:
-        while stack and num > stack[-1]:
-            stack.pop()
-        if stack:
-            dic[num] = stack[-1]
-        stack.append(num)
-    return [dic.get(num, -1) for num in nums1]
+voted = {}
+def check_voter(name):
+    if voted.get(name):
+        print("Kick them out")
+    else:
+        voted[name] = True
+        print("Let them vote!")
+        
+        
+check_voter('ebenezer')
+check_voter('ebenezer')
+        
+        
+        
         
         
