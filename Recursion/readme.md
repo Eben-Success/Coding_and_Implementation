@@ -20,3 +20,8 @@ Divide and conquer algorithms are mostly recursive algorithms.
 
 ![](2022-11-24-06-25-44.png)
 
+## Optimization in Recursion
+
+* Memoization & Caching.
+Memoization is optimization techniques that makes application more efficient and faster.
+
