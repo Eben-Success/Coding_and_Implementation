@@ -29,8 +29,21 @@ Breadth First Traversal
 
 ![](images/2022-12-01-09-17-10.png)
 
+![img.png](images/img.png)
+
+* Watch out for cycles.
+* We mark visited node as visited to avoid infinte loops.
+
+![img_2.png](images/img_2.png)
+
 ![img.png](img.png)
 
 ##  QUESTIONS
 
-![img_1.png](img_1.png)
+
+
+![img_1.png](images/img_1.png)
+
+
+
+
