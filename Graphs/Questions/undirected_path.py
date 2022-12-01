@@ -3,7 +3,7 @@
 
 # Solving the question
 # Convert edges to adjacency list
-
+# Perform depth first search
 
 def undirected_path(edges, node_A, node_B):
     graph = buildGraph(edges)
