@@ -1,4 +1,4 @@
-# Queue implementation in Python
+# Queue folder implementation in Python
 
 class Queue:
 

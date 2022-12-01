@@ -15,6 +15,9 @@ Neighbour node is any node that is accessible through an edge.
 
 ![](images/2022-12-01-09-07-26.png)
 
+## Time Complexity
+
+![img_1.png](img_1.png)
 
 ## Depth First Traversal
 
