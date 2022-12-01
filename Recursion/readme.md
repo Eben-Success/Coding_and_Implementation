@@ -25,3 +25,8 @@ Divide and conquer algorithms are mostly recursive algorithms.
 * Memoization & Caching.
 Memoization is optimization techniques that makes application more efficient and faster.
 
+* Tail-Call Recursion Optimization
+
+Make the recursive call be the last instruction.
+
+Tail call recursion optimization is supported by functional languages. Not supported by Python, Java. Supported for JS in Safari.
