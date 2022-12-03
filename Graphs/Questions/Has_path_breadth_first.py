@@ -1,7 +1,8 @@
+from collections import deque
 def Has_path(graph, src, dst):
-    queue = [src]
+    queue = deque([src])
     while len(queue) > 0:
-        current = queue.pop(0)
+        current = queue.popleft()
         if current == dst:
             return True
 
