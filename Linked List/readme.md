@@ -2,6 +2,7 @@ Linked list is a collection of nodes pointing to each other, and the last node p
 
 ![img_1.png](img_1.png)
 
+![img_2.png](img_2.png)
 
 ### Time Complexity
 
