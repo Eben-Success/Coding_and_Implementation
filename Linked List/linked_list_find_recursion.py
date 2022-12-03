@@ -1,3 +1,6 @@
+# Time O(n)
+# Space O(n): due to call stack.
+
 class Node:
     def __init__(self, val):
         self.val = val
