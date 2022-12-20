@@ -1,21 +1,15 @@
-def row(array):
+def divide(dividend, divisor):
+    # Time: O(logn^2)
 
-    list = []
-    arr = array
-    for x in range(len(array)):
-        if array[x] == 'a':
-            array.insert(x+1, "b")
-        if array[x] == 'b':
-            array.insert(x+1, "c")
-        if array[x] == 'c':
-            array.insert(x+1, "a")
+    if (dividend == -2147483648 and divisor == -1): return 2147483647
 
+    a, b, res = abs(dividend), abs(divisor), 0
 
-    return len(arr) - len(array)
+    for x in range(32)[::-1]:
+        if (a >> x) - b >= 0:
+            res += 1 << x
+            a -= b << x
 
+    return res if (dividend > 0) == (divisor > 0) else -res
 
-
-list = ['a', 'a', 'b', 'c', 'c']
-print(len(list))
-row(list)
-print(list)
+print(divide(10, 3))
