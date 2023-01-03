@@ -10,3 +10,10 @@ def find_first(haystack, needle):
             if j == len(needle) - 1:
                 return i
     return -1
+
+
+haystack = "sadbutsad"
+needle = "sad"
+
+print("\nOutput is: ")
+print(find_first(haystack, needle))
