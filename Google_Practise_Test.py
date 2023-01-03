@@ -1,15 +1,12 @@
-def divide(dividend, divisor):
-    # Time: O(logn^2)
+def find_first(haystack, needle):
 
-    if (dividend == -2147483648 and divisor == -1): return 2147483647
+    if needle == "":
+        return 0
 
-    a, b, res = abs(dividend), abs(divisor), 0
-
-    for x in range(32)[::-1]:
-        if (a >> x) - b >= 0:
-            res += 1 << x
-            a -= b << x
-
-    return res if (dividend > 0) == (divisor > 0) else -res
-
-print(divide(10, 3))
+    for i in range(len(haystack) + 1 - len(needle)):
+        for j in range(len(needle)):
+            if haystack[i+j] != needle[j]:
+                break
+            if j == len(needle) - 1:
+                return i
+    return -1
