@@ -59,11 +59,47 @@ class LinkedList:
         prev.next = cur_node.next
         cur_node = None
 
-    def delete_node_at_pos(self, pos):
-        pass
+    # def delete_node_at_pos(self, pos):
+    #     pass
 
+    # find the length of linkedlist
     def len_linkedlist(self):
-        pass
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
 
+        
+    # swap two nodes in the linkedlist
     def swap_nodes(self, key_1, key_2):
-        pass
+        if key_1 == key_2:
+            return 
+
+        prev_1 = None
+        cur_1 = self.head
+        while cur_1 and cur_1.data != key_1:
+            prev_1 = cur_1
+            cur_1 = cur_1.next
+
+        prev_2 = None
+        cur_2 = self.head
+        while cur_2 and cur_2.data != key_2:
+            prev_2 = cur_2
+            cur_2 = cur_2.next
+
+        if not cur_1 or not cur_2:
+            return 
+
+        if prev_1:
+            prev_1.next = cur_2
+        else:
+            self.head = cur_2
+
+        if prev_2:
+            prev_2.next = cur_1
+        else:
+            self.head = cur_1
+
+        cur_1.next, cur_2.next = cur_2.next, cur_1.next
