@@ -6,13 +6,36 @@ class BinaryTree:
 
 
     def insert_left(self, val):
-        pass
+        if self.left == None:
+            self.left = BinaryTree(val)
+        else:
+            new_node = BinaryTree(val)
+            new_node.left = self.left
+            self.left = new_node
 
     def insert_right(self, val):
-        pass
+        if self.right == None:
+            self.right = BinaryTree(val)
+        else:
+            new_node = BinaryTree(val)
+            new_node.right = self.right
+            self.right = new_node
 
-    def insert_node(self, val):
-        pass
+    def insert_node(self, root, val):
+        new_node = BinaryTree(val)
+        if val < root.val:
+            if self.left == None:
+                self.left = BinaryTree(val)
+            else:
+                new_node.left = self.left
+                self.left = new_node
+
+        else:
+            if self.right == None:
+                self.right = BinaryTree(val)
+            else:
+                new_node.right = self.left
+                self.left = new_node
 
     def find_node(self, val):
         pass
