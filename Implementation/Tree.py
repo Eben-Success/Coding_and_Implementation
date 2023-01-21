@@ -68,3 +68,32 @@ class BST:
             return self.search(root.left, key)
         else:
             return self.search(root.right, key)
+
+    # delete a node from the BST
+    def delete_node(self, val):
+
+        """
+        Edge cases:
+        1. The node has no children.
+        2. The node has one child.
+        3. The node has two children.
+        """
+
+        self.root = self._delete_node(self.root, val)
+
+
+    def _delete_node(self, node, val):
+        if not node:
+            return None
+
+        if val < node.val:
+            node.left = self._delete_node(node.left, val)
+        elif val > node.val:
+            node.right = self._delete_node(node.right, val)
+
+
+
+
+
+
+        
