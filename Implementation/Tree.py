@@ -1,50 +1,70 @@
-class BinaryTree:
+class Node:
     def __init__(self, val):
         self.val = val
         self.left = None
         self.right = None
 
+class BST:
+    def __init__(self) :
+        self.root = None
 
-    def insert_left(self, val):
-        if self.left == None:
-            self.left = BinaryTree(val)
+
+    
+    def insert_node(self, val):
+        """
+        In average case, the time is O(logn): tree is balanced
+        Time in worst case is O(n): height of the BST
+        """
+        new_node = Node(val)
+
+        if self.root is None:
+            self.root = new_node
+
+        current = self.root
+
+        if val < current.val:
+            if current.left is None:
+                current.left = new_node
+                return 
+            # traverses the left of the tree.
+            current = current.left
+
         else:
-            new_node = BinaryTree(val)
-            new_node.left = self.left
-            self.left = new_node
+            if current.right is None:
+                current.right = new_node
+                return 
+            # traverse the right of the tree
+            current = current.right
 
-    def insert_right(self, val):
-        if self.right == None:
-            self.right = BinaryTree(val)
-        else:
-            new_node = BinaryTree(val)
-            new_node.right = self.right
-            self.right = new_node
+    def get_node(self, root, val):
+        """Average time: O(logn) when tree is balanced.
+        Worst case: O(n): height of the BST"""
 
-    def insert_node(self, root, val):
-        new_node = BinaryTree(val)
+        if root is None or root.val == val:
+            return root
+
         if val < root.val:
-            if self.left == None:
-                self.left = BinaryTree(val)
-            else:
-                new_node.left = self.left
-                self.left = new_node
-
+            return self.get_node(root.left, val)
         else:
-            if self.right == None:
-                self.right = BinaryTree(val)
+            return self.get_node(root.right, val)
+
+    # Iterative Approach
+    # Return boolean if node if found
+    def search(self, root, key):
+        while root is not None:
+            if key == root:
+                return True
+            elif key < root:
+                root = root.left
             else:
-                new_node.right = self.left
-                self.left = new_node
+                root = root.right
+        return False
 
-    def find_node(self, val):
-        pass
-
-    def remove_node(self, val, parent):
-        pass
-
-    def clear_node(self):
-        pass
-
-    def find_minimum_value(self):
-        pass
+    # Recursive Approach
+    def search_recursive(self, root, key):
+        if root is None or root.val == key:
+            return root is not None
+        elif key < root.val:
+            return self.search(root.left, key)
+        else:
+            return self.search(root.right, key)
