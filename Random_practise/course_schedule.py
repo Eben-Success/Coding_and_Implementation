@@ -28,3 +28,10 @@ def canFinish(numCourses, prerequisites):
                 queue.append(neighbor)
 
     return sum(indegrees) == 0
+
+
+# Test Cases
+numCourses = 2
+prerequisites = [[1,0],[0,1]]
+
+print(canFinish(numCourses, prerequisites))

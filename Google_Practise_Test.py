@@ -1,19 +1,26 @@
-def find_first(haystack, needle):
+from collections import deque, defaultdict
 
-    if needle == "":
-        return 0
+def canFinish(numCourses, prerequisites):
 
-    for i in range(len(haystack) + 1 - len(needle)):
-        for j in range(len(needle)):
-            if haystack[i+j] != needle[j]:
-                break
-            if j == len(needle) - 1:
-                return i
-    return -1
+    graph = [[] for _ in range(numCourses)]
 
+    indegrees = [0] * numCourses
 
-haystack = "sadbutsad"
-needle = "sad"
+    for a, b in prerequisites:
+        graph[b].append(a)
+        indegrees[a] += 1
 
-print("\nOutput is: ")
-print(find_first(haystack, needle))
+    queue = deque()
+    for i in range(numCourses):
+        if indegrees[i] == 0:
+            queue.append(i)
+
+    while queue:
+        course = queue.popleft()
+
+        for nei in graph[course]:
+            indegrees[nei] -= 1
+            if indegrees[nei] == 0:
+                queue.append(nei)
+
+    return sum(indegrees) == 0
