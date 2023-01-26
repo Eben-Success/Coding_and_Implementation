@@ -13,4 +13,6 @@ def buildTree(preorder, inorder):
 
     root = TreeNode(preorder[0])
     idx = inorder.index(preorder[0])
-    root.left = buildTree(preorder[], inorder[])
+    root.left = buildTree(preorder[1:idx+1], inorder[:idx])
+    root.right = buildTree(preorder[idx+1:], inorder[idx+1:])
+    return root
