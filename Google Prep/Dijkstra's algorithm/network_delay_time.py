@@ -31,6 +31,7 @@ class Solution:
             time_taken = max(time_taken, cur_time)
 
             for nei, next_time in edges[cur_node]:
-                heapq.heappush(minHeap, (cur_time + next_time, nei))
+                if nei not in visited:
+                    heapq.heappush(minHeap, (cur_time + next_time, nei))
 
         return time_taken if len(visited) == n else -1
