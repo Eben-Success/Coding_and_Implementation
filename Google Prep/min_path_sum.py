@@ -24,4 +24,28 @@ n == grid[i].length
 1 <= m, n <= 200
 0 <= grid[i][j] <= 100
 """
+from heapq import heappop, heappush
+def min_path_sum(grid):
+    ROW, COL = len(grid), len(grid[0])
 
+    visited = set()
+    heap = [(grid[0][0], 0, 0)]
+
+    while heap:
+        val, r, c = heappop(heap)
+
+        if r == ROW - 1 and c == COL - 1:
+            return val
+
+        if (r, c) in visited:
+            continue
+        visited.add(r, c)
+
+        if r + 1 < ROW:
+            heappush(heap, (val + grid[r+1][c], r + 1, c))
+
+        if c + 1 < COL:
+            heappush(heap, (val + grid[r][c+1], r, c+1))
+
+    return 0
+    
