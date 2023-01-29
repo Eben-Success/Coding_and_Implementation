@@ -16,3 +16,7 @@ def isugly(n):
         n = n / 5
 
     return n == 1
+
+
+
+print(isugly())
