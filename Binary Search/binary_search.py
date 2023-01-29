@@ -18,5 +18,5 @@ def binary_search(arr, target):
             
 arr = [2,3,4,5,6,7,9]
 
-print(binary_search(arr, 2))
+print(binary_search(arr, 9))
     
