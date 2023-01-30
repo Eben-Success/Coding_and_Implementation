@@ -26,4 +26,9 @@ class Solution:
                     stack.append(stack.pop() * cur_num)
 
                 elif char == "/": # char == "/"
-                    stack.append(stack.pop() / cur_num)
+                    stack.append(int(stack.pop() / cur_num))
+
+                cur_num = 0
+                operator = "char"
+
+        return sum(stack)

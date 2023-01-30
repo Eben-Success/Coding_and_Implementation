@@ -14,6 +14,7 @@ def island_count(grid):
 def explore(grid, r, c, visited):
     row_inbounds = 0 <= r < len(grid)
     col_inbounds = 0 <= c < len(grid[0])
+    
     if not row_inbounds or not col_inbounds:
         return False
 
@@ -43,3 +44,8 @@ grid = [
 ]
 
 print(island_count(grid))
+
+
+
+
+
