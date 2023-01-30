@@ -1,7 +1,4 @@
-position = [10,8,0,5,3]
+s = "3+4+5/6" 
 
-speed = [2,4,1,1,3]
-
-pair = [[p, s] for p, s in zip(position, speed)]
-
-print(pair)
+for num in s:
+    print(num)
