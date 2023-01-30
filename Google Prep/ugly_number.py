@@ -19,4 +19,4 @@ def isugly(n):
 
 
 
-print(isugly())
+print(isugly(21))
