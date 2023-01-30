@@ -32,3 +32,21 @@ isConnected[i][j] is 1 or 0.
 isConnected[i][i] == 1
 isConnected[i][j] == isConnected[j][i]
 '''
+
+def dfs(isConnected, visited, city):
+    visited[city] = True
+
+    for i in range(len(isConnected)):
+        if isConnected[city][i] and not visited:
+            dfs(isConnected, visited, i)
+
+def findCircleNum(isConnected):
+    n = len(isConnected)
+    visited = [False] * n
+    count = 0
+
+    for i in range(n):
+        if not visited[i]:
+            dfs(isConnected, visited, i)
+            count += 1
+    return count
