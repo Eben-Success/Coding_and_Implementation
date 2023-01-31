@@ -14,3 +14,10 @@ def compareVersion(version1, version2):
         elif a > b:
             return 1
     return 0
+
+
+
+version1 = "1.01"
+version2 = "1.001"
+
+print(compareVersion(version1, version2))
