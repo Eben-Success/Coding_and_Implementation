@@ -10,17 +10,17 @@ class Node:
 
 def bfs(root):
     queue = deque([root])
-    sum = 0
+    tree_sum = 0
 
     while queue:
         current = queue.popleft()
-        sum += current.val
+        tree_sum += current.val
 
         if current.right is not None:
             queue.append(current.right)
         if current.left is not None:
             queue.append(current.left)
-    return sum
+    return tree_sum
 
 
 

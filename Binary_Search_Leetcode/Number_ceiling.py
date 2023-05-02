@@ -4,8 +4,8 @@ def ceiling_number(arr, target):
     low = 0
     high = len(arr) - 1
 
-    if target > high:
-        return -1
+    # if target > high:
+    #     return -1
 
     while low <= high:
         mid = (low + high) // 2
@@ -20,4 +20,4 @@ def ceiling_number(arr, target):
 
 arr = [2,3,5,9,14,16,18]
 
-print(ceiling_number(arr, 19))
+print(ceiling_number(arr, 4))

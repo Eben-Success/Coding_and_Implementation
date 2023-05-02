@@ -24,4 +24,4 @@ def BubbleSort(array):
 
 data = [2, -9, 5, 56, 43, 3, 112]
 print("Sorted Array in Ascending Order: ")
-print(data)
+print(BubbleSort(data))

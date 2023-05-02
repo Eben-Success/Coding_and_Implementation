@@ -17,7 +17,7 @@ def dynamic_sliidng_window(arr, x):
         # Then contract the sliding window until it
         # no longer meets our condition
         while start < end and current_sum >= x:
-            current_sum = current_sum - arr[start]
+            current_sum -= arr[start]
             start += 1
 
             # Update the min_length if this is shorter

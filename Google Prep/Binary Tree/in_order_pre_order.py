@@ -4,9 +4,6 @@ class TreeNode:
         self.right = None
         self.left = None
 
-preorder = [3,9,20,15,7]
-inorder = [9,3,15,20,7]
-
 def buildTree(preorder, inorder):
     if not preorder or not inorder:
         return 
@@ -16,3 +13,8 @@ def buildTree(preorder, inorder):
     root.left = buildTree(preorder[1:idx+1], inorder[:idx])
     root.right = buildTree(preorder[idx+1:], inorder[idx+1:])
     return root
+
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+
+print(buildTree(preorder, inorder))

@@ -11,11 +11,11 @@ class Node:
 def dfs(root):
     if root is None:
         return 0
-    return dfs(root.left) + dfs(root.right) + root.val
+    # return dfs(root.left) + dfs(root.right) + root.val
 
-    # left_sum = dfs(root.left)
-    # right_sum = dfs(root.right)
-    # return left_sum + right_sum + root.val
+    left_sum = dfs(root.left)
+    right_sum = dfs(root.right)
+    return left_sum + right_sum + root.val
 
 a = Node(3)
 b = Node(11)

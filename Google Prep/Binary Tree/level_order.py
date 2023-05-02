@@ -35,7 +35,7 @@ def level_order(root):
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-            res.append(level_order)
+        res.append(level_order)
     return res
             
 

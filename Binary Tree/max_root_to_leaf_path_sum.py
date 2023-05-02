@@ -9,7 +9,8 @@ class Node:
 
 def max_path_sum(root):
     if root is None:
-        return - float("inf")
+        # return - float("inf")
+        return 0
     if root.left is None and root.right is None:
         return root.val
     max_child = max(max_path_sum(root.left),

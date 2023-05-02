@@ -48,6 +48,4 @@ def top_pairs(log, k):
     return [pair[1] for pair in pairs]
 
 
-
-
 print(top_pairs(log, 3))
