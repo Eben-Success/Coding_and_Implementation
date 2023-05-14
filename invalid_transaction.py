@@ -9,7 +9,6 @@ You are given an array of strings transaction where transactions[i] consists of 
 
 Return a list of transactions that are possibly invalid. You may return the answer in any order.
 
- 
 
 Example 1:
 
