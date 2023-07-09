@@ -60,6 +60,7 @@ class LinkedList:
         # else: insert at that index
 
         node = Node(val)
+
         if index == 0:
             node.next = self.head
             self.head = node
@@ -75,8 +76,8 @@ class LinkedList:
             if cur is None:
                 raise IndexError("Index not Found")
             
-            cur.next = node.next
             node.next = cur.next
+            cur.next = node
 
             
 
