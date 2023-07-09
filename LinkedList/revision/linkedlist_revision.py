@@ -26,7 +26,8 @@ class LinkedList:
         
         
     def display_node(self):
-        """Initialize a new variable called temp and
+        """
+        Initialize a new variable called temp and
         use it to traverse the node printing its
         values.
         """
@@ -36,6 +37,52 @@ class LinkedList:
             print(temp.val, "-->", end="")
             temp = temp.next
         print("End")
+
+    def insert_last(self, val):
+        # Time: O(1)
+        # create a new node
+        node = Node(val)
+
+        # if Linkedlist is empty, insert at first
+        if self.tail is None:
+            self.insert_first(val)
+            return
+
+        self.tail.next = node
+        self.tail = node
+
+        self.size += 1
+
+    def insert_at_index(self, index, val):
+        # if the index == 0
+        # else: traverse the linkedlist to index - 1
+        # if not found: raise IndexError
+        # else: insert at that index
+
+        node = Node(val)
+        if index == 0:
+            node.next = self.head
+            self.head = node
+
+        else:
+            cur = self.head
+            count = 0
+
+            while cur and count < index - 1:
+                cur = cur.next
+                count += 1
+
+            if cur is None:
+                raise IndexError("Index not Found")
+            
+            cur.next = node.next
+            node.next = cur.next
+
+            
+
+
+
+        
         
         
         
@@ -51,6 +98,8 @@ list.insert_first(11)
 list.insert_first(12)
 list.insert_first(56)
 list.insert_first(63)
+list.insert_last(99)
+list.insert_at_index(3, 100 )
 list.display_node()
 
 
