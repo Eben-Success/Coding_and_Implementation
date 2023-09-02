@@ -1,3 +1,12 @@
+# Dynamic Programming
+
+* Notice any overlapping subproblems.
+* Decide what is the triviallly smallest input.
+* Think recursively to use Memoization.
+* Think iteratively to use Tabulation.
+* Draw a strategy first.
+
+
 ### Memoization Recipe
 
 1. Make it work
